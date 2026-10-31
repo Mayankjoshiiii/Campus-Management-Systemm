@@ -1,0 +1,14 @@
+{
+  "name": "campus-management-system",
+  "version": "1.0.0",
+  "description": "University Management System (DBMS PBL) with React, Node.js, and MySQL",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install",
+    "start": "cd backend && node app.js",
+    "setup-db": "cd backend && node setup_database.js",
+    "seed-db": "cd backend && node seed_database.js"
+  },
+  "keywords": ["university", "management", "dbms", "react", "mysql", "express"],
+  "author": "Mayank Joshi",
+  "license": "ISC"
+}

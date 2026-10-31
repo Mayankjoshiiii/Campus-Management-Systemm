@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
@@ -42,20 +43,38 @@ app.get("/check", (req, res) => {
     res.json({ status: "ok", message: "Campus Cloud University API is running properly." });
 });
 
-app.get("/", (req, res) => {
-    res.json({
-        name: "Campus Cloud University Management System API",
-        status: "Active",
-        endpoints: {
-            api: "/api",
-            admin: "/admin",
-            faculty: "/faculty",
-            student: "/student"
+// Serve frontend static files if built (Production / Cloud Deployment)
+const frontendDist = path.join(__dirname, "../frontend/dist");
+if (fs.existsSync(frontendDist)) {
+    app.use(express.static(frontendDist));
+    app.get("*", (req, res, next) => {
+        if (
+            req.path.startsWith("/api") ||
+            req.path.startsWith("/admin") ||
+            req.path.startsWith("/faculty") ||
+            req.path.startsWith("/student") ||
+            req.path.startsWith("/uploads")
+        ) {
+            return next();
         }
+        res.sendFile(path.join(frontendDist, "index.html"));
     });
-});
+} else {
+    app.get("/", (req, res) => {
+        res.json({
+            name: "Campus Cloud University Management System API",
+            status: "Active",
+            endpoints: {
+                api: "/api",
+                admin: "/admin",
+                faculty: "/faculty",
+                student: "/student"
+            }
+        });
+    });
+}
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });
