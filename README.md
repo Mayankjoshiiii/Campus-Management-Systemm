@@ -1,10 +1,21 @@
 # 🎓 Campus Cloud - University Management System (DBMS PBL)
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Mayankjoshiiii/Campus-Management-Systemm)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Mayankjoshiiii/Campus-Management-Systemm&root-directory=frontend)
+
 A comprehensive, role-based University Management System built as a DBMS Project-Based Learning (PBL) application. Powered by **React + Vite**, **Express.js / Node.js**, and **MySQL / MariaDB**.
 
 ---
 
-## 🚀 Quick Start (1-Click)
+## 🌐 Live Project & Deployment
+
+- 🔗 **Live Deployment Guide**: Read the complete **[DEPLOYMENT.md](DEPLOYMENT.md)** for free 24/7 cloud hosting on Render and cloud MySQL setup.
+- 🚀 **1-Click Cloud Deploy**: Click the **Deploy to Render** button above to launch this repository on Render directly.
+- 💻 **Local Live Demo**: Run `./start-project.bat` to launch the full project locally on `http://localhost:5173`.
+
+---
+
+## 🚀 Quick Start (1-Click Local Run)
 
 Simply double-click the included batch launcher:
 ```bat
@@ -93,6 +104,8 @@ Campus-Management-Systemm/
 │   │   ├── pages/                 # Admin, Teachers, and Students dashboards
 │   │   └── styles/                # Styled Components UI themes
 │   └── vite.config.js             # Vite configuration with API proxy
+├── render.yaml                    # 1-Click Render Cloud deployment blueprint
+├── DEPLOYMENT.md                  # Comprehensive cloud hosting instructions
 └── start-project.bat              # 1-Click launcher script
 ```
 
