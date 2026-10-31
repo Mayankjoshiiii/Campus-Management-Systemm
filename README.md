@@ -1,17 +1,20 @@
 # 🎓 Campus Cloud - University Management System (DBMS PBL)
 
+[![Deploy to GitHub Pages](https://github.com/Mayankjoshiiii/Campus-Management-Systemm/actions/workflows/deploy.yml/badge.svg)](https://github.com/Mayankjoshiiii/Campus-Management-Systemm/actions/workflows/deploy.yml)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2ea44f?style=for-the-badge&logo=github)](https://mayankjoshiiii.github.io/Campus-Management-Systemm/)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Mayankjoshiiii/Campus-Management-Systemm)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Mayankjoshiiii/Campus-Management-Systemm&root-directory=frontend)
 
 A comprehensive, role-based University Management System built as a DBMS Project-Based Learning (PBL) application. Powered by **React + Vite**, **Express.js / Node.js**, and **MySQL / MariaDB**.
 
 ---
 
-## 🌐 Live Project & Deployment
+## 🌐 Live Project Link
 
-- 🔗 **Live Deployment Guide**: Read the complete **[DEPLOYMENT.md](DEPLOYMENT.md)** for free 24/7 cloud hosting on Render and cloud MySQL setup.
-- 🚀 **1-Click Cloud Deploy**: Click the **Deploy to Render** button above to launch this repository on Render directly.
-- 💻 **Local Live Demo**: Run `./start-project.bat` to launch the full project locally on `http://localhost:5173`.
+👉 **[Click Here to Open Live Project (GitHub Pages)](https://mayankjoshiiii.github.io/Campus-Management-Systemm/)**
+
+- **Live URL**: `https://mayankjoshiiii.github.io/Campus-Management-Systemm/`
+- **Instant Preview**: Open the link on any browser/phone and click **👑 Admin Demo**, **👨‍🏫 Teacher Demo**, or **🎓 Student Demo** to test all dashboards and features live!
+- **Local Database Mode**: Run `./start-project.bat` to launch with your local MySQL database.
 
 ---
 
@@ -38,7 +41,7 @@ This script automatically:
 | **👨‍🏫 Faculty / Teacher** | `faculty@university.edu` | `faculty123` | `/teacher/dashboard` |
 | **🎓 Student** | `student@university.edu` | `student123` | `/student/dashboard` |
 
-> **Tip:** You can also use the **1-Click Demo Buttons** on the Sign In page (`http://localhost:5173/signin`) to instantly test each role without typing.
+> **Tip:** You can also use the **1-Click Demo Buttons** on the Sign In page to instantly test each role without typing.
 
 ---
 
@@ -86,6 +89,7 @@ npm run dev
 
 ```
 Campus-Management-Systemm/
+├── .github/workflows/deploy.yml   # GitHub Actions automatic deployment to GitHub Pages
 ├── Collections/                   # Sample CSV/XLSX files for bulk student uploads
 │   ├── sample_students.csv
 │   └── sample_students.xlsx

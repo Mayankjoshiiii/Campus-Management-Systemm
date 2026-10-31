@@ -27,7 +27,7 @@ const SignIn = () => {
       const response = await axios.post(
         "http://localhost:5000/api/auth/login",
         { email, password },
-        { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" }, timeout: 2500 }
       );
 
       if (response.data.status === "success") {
@@ -49,10 +49,36 @@ const SignIn = () => {
         setError(response.data.message || "Invalid credentials");
       }
     } catch (err) {
-      console.error("Login failed:", err);
+      console.warn("Backend API unavailable or error:", err);
+
+      // Seamless fallback for GitHub Pages demo mode when backend is offline
+      if (email === "admin@university.edu" && password === "admin123") {
+        localStorage.setItem("authToken", "demo-token-admin");
+        localStorage.setItem("adminToken", "demo-token-admin");
+        localStorage.setItem("userRole", "Admin");
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userName", "University Admin (Live Demo)");
+        navigate("/admin/dashboard");
+        return;
+      } else if (email === "faculty@university.edu" && password === "faculty123") {
+        localStorage.setItem("authToken", "demo-token-faculty");
+        localStorage.setItem("userRole", "Teacher");
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userName", "Dr. Satya Prakash (Live Demo)");
+        navigate("/teacher/dashboard");
+        return;
+      } else if (email === "student@university.edu" && password === "student123") {
+        localStorage.setItem("authToken", "demo-token-student");
+        localStorage.setItem("userRole", "Student");
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userName", "Aman Verma (Live Demo)");
+        navigate("/student/dashboard");
+        return;
+      }
+
       setError(
         err.response?.data?.message ||
-        "Login failed. Please check your credentials or make sure backend is running on port 5000."
+        "Login failed. Please verify credentials or launch local backend via start-project.bat."
       );
     } finally {
       setIsLoading(false);
